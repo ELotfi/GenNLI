@@ -148,25 +148,25 @@ def main(args):
 
 if __name__ == "__main__": 
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--model_name', type=str, default= 'gpt2-medium')  # or gpt2-medium 
+	parser.add_argument('--model_name', type=str, default= 'gpt2-medium')  # or gpt2
 	parser.add_argument('--train_data_path', type=str, default= 'data/TOEFL-train.csv')
 	parser.add_argument('--test_data_path', type=str, default= 'data/TOEFL-test.csv')
 	parser.add_argument('--eval_path', type=str, default= 'results/eval.json')
 	parser.add_argument('--conf_path', type=str, default= 'results/confusion.json')
 
 	parser.add_argument('--seed', type=int, default=42)
-	parser.add_argument('--block_size', type=int, default=512) # adjust for gpt2-medium
-	parser.add_argument('--train_batch_size', default= 1, type=int) # adjust for gpt2-medium
-	parser.add_argument('--accumulate_grad', type=int, default=16) # adjust for gpt2-medium
+	parser.add_argument('--block_size', type=int, default=512)
+	parser.add_argument('--train_batch_size', default= 1, type=int) # adjust for gpt2
+	parser.add_argument('--accumulate_grad', type=int, default=16) # adjust for gpt2
 	parser.add_argument('--epoch', type=int, default=3)
 	parser.add_argument('--epoch_eval', type=int, default=2)  # epoch to start evaluating the model
 	parser.add_argument('--max_grad_norm', type=float, default=1.)
-	parser.add_argument('--lr', type=float, default=1.5e-4) # 1.25e-4, 2.25e-5, 2.25e-4
+	parser.add_argument('--lr', type=float, default=1.5e-4) 
 	parser.add_argument('--warmup_steps', type=int, default=0)
 
 	parser.add_argument('--eval_setting', choices=['cv', 'train-test'], default= 'train-test')
 	parser.add_argument('--num_folds', type=int, default=10)
-	parser.add_argument('--device', default= torch.device('cuda:7'))
+	parser.add_argument('--device', default= torch.device('cuda'))
 	args = parser.parse_args()
 	main(args)
 
