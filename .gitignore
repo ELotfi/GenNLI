@@ -1,0 +1,6 @@
+data/*.*
+results/
+*.ipynb
+*.out
+model.py
+eval.py
